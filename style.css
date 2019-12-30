@@ -1,0 +1,275 @@
+/* Settings of main page */
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#page {
+    height: 100%;
+    text-align: center;
+}
+
+header {
+    height: 7%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #185f6b;
+    color: #fff;
+}
+
+section {
+    height: 88%;
+}
+
+footer {
+    height: 5%;
+    background-color: #185f6b;
+    font-family: 'Times New Roman', Times, serif;
+    color: #fff;
+    display: block;
+}
+
+main {
+    width: 100%;
+    height: 100%;
+    background-image: url(assets/images/1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.header,
+.copyrights {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0;
+    font-size: large;
+}
+
+#pages {
+    overflow: auto;
+    width: 100%;
+    left: 10%;
+}
+
+
+/* End of settins of main page */
+
+/* Style of card */
+.card-columns {
+    @include media-breakpoint-only(lg) {
+        column-count: 4;
+    }
+
+    @include media-breakpoint-only(xl) {
+        column-count: 5;
+    }
+}
+
+.card {
+    display: inline-block;
+}
+
+/* Setting of container */
+.container {
+    width: 75%;
+    height: 450px;
+    margin-top: 1%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* Loading gif */
+#loading {
+    width: 100px;
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* modal */
+.modal-title {
+    font-size: xx-large;
+    color: whitesmoke
+}
+
+a {
+    color: aliceblue;
+    font-size: x-large
+}
+
+#about,
+#liveReports {
+    display: none;
+}
+
+#liveReports {
+    width: 40%;
+    height: 20%;
+    margin-right: 200px;
+}
+ /* About Page, personal info and info of project */
+ h2 {
+    color: #fff;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    display: inline
+}
+#perPhoto {
+    width: 40%;
+    height: 40%;
+    border-radius: 50px;
+}
+
+.personalInfo {
+    height: 15%;
+    width: 30%;
+    padding: 1px;
+    text-align: center;
+    border: 2px solid #38d3ee;
+    border-radius: 50px;
+    margin-top: auto;
+    margin-bottom: auto;
+    color: #fff;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: larger;
+    float: right;
+}
+
+#infoOfProject {
+    margin-top: 3px;
+    color: #38d3ee;
+    font-size: large;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    float: left;
+    border: 1px solid #38d3ee;
+    height: 20%;
+    width: 40%;
+    border-radius: 50px;
+    padding: 14px;
+    text-align: justify
+}
+
+.aboutProject {
+    color: #38d3ee;
+}
+
+.riskWarning {
+    color: white;
+    text-align: center;
+    margin-top: 3px;
+    display: inline-block;
+}
+/* Style of gifs */
+.left,
+.right {
+    border-radius: 100px;
+    width: 200px;
+
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+
+/* Style of Header */
+.ml14 {
+    font-weight: 200;
+    font-size: x-larger;
+}
+
+.posit .ml14.text-wrapper {
+    position: relative;
+    display: inline-block;
+    padding-top: 0.091em;
+    padding-right: 0.05em;
+    padding-bottom: 0.15em;
+}
+
+.ml14.line {
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background-color: #fff;
+    transform-origin: 100% 100%;
+    bottom: 0;
+}
+
+.ml14.letter {
+    display: inline-block;
+    line-height: 1em;
+}
+
+/* Setting for checkboxes */
+.checkBoxToken {
+    transform: translateY(100%);
+    float: right;
+}
+.checkBoxModal {
+    transform: translateX(20px);
+}
+
+/* Style of div-"moreInfo" */
+.logoOfToken {
+    transform: translateY(-65px);
+    float: right;
+}
+h3,
+h4,
+h5 {
+    float: left;
+    margin: 1px;
+}
+
+/* Style of search box */
+#inputBoxOfSearch {
+    width: 250px;
+    padding: 2px;
+    margin: 5px
+}
+/*Message for choose currency  */
+#noAssetsSelected{
+    display: none;
+    color: #fff;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    margin-top: 1px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Style of Bitcoin-gifs */
+.visible-md,
+.visible-lg {
+    display: block;
+    visibility: visible;
+}
+
+@media (max-width: 1199px) {
+    .divGifs {
+        display: none;
+    }
+}
+@media (min-width: 1200px) {
+    .divGifs {
+        display: block;
+    }
+}
+
+#chartContainer{
+height: 370px;
+width: 150%
+}
+#myChart{
+    width: 400px;
+    height: 400px;
+}

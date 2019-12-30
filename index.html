@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title> Cryptonite </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery-3.4.1.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    <link rel="icon" type="image/png" href="assets/images/icon2.png" />
+    <script src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
+
+
+
+
+
+
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="style.css">
+
+
+</head>
+<!--  Body with onload function -->
+
+<body onload="showAll()">
+
+    <div id="page">
+        <!-- Heder -->
+        <header>
+            <h1 class="ml14">
+                <span class="text-wrapper">
+                    <span class="letters">Always stay updated!</span>
+                    <span class="line"></span>
+                </span>
+            </h1>
+
+
+
+        </header>
+
+        <!-- Setting of single page aplication -->
+
+
+        <!-- Section -->
+        <section class="allPages">
+
+            <main>
+                <div id="menu">
+                    <div class="divGifs hidden-xs">
+                        <img src="assets/images/bit-gif.gif" class="left">
+                        <img src="assets/images/bit-gif.gif" class="right">
+                    </div>
+
+                    <!-- Template modal -->
+                    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog"
+                        aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                            <h5 class="modal-title" id="exampleModalLabel">Remove any coin to add other</h5>
+                            <div id="coins-modal" class="modal-content">
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- div includes links, input field and buttons: search and clear -->
+                    <div class="links">
+                        <span>
+                            <a href="javascript:void(0);" onclick="showHome()">| Home |</a>
+                            <a href="javascript:void(0);" onclick="showliveReports()">Live Reports |</a>
+                            <a href="javascript:void(0);" onclick="showAbout()">About |</a>
+                            <input type="text" id="inputBoxOfSearch" placeholder="Please enter a symbol for search">
+                            <button id="searchButton" class="btn btn-primary"> Search </button>
+                            <button id="clearButton" class="btn btn-warning"> Clear </button>
+                        </span>
+                    </div>
+
+
+                    <!-- Loading Gif -->
+                    <img src="assets/images/loader gif.gif" id="loading">
+
+
+                    <!-- Div with all pages -->
+                    <div id="pages">
+
+                        <!-- container with all coins -->
+                        <div id="divTokens" class="container">
+
+                        </div>
+
+
+                        <!-- Live reports Page -->
+                        <div id="liveReports">
+                            <div id="noAssetsSelected">
+                                <h1>Please select at least one Coin to view
+                                    chart </h1>
+                            </div>
+                            <div id="chartContainer">
+                                <canvas id="myChart"></canvas>
+                            </div>
+                        </div>
+
+
+                        <!-- About Page, includes  personal info and info of project -->
+                        <div id="about" class="container-fluid">
+                            <h2>About: </h2>
+                            <div id="aboutInfo">
+                                <div class="personalInfo">
+                                    <img src="assets/images/anonynous.jpg" alt="Photo" id="perPhoto">
+                                    <p><b> Full Name:</b> Edgar Bagdasarov </p>
+                                    <p><b> Address:</b> Zalman Aran, Ashdod,Israel </p>
+                                    <p><b> Date of birthday: </b> 25/11/1988 </p>
+                                    <p><b>Full Stack Developer</b></p>
+                                    <p><b>Topic:</b> jQuery-AJAX API Project</p>
+                                    <br><br>
+                                    <p class="aboutProject"><b>The project was developed for <a
+                                                href="https://www.johnbryce.co.il/" target="_blank">John Bryce
+                                                college.</a>
+                                            The project will allow you to stay updated about cryptocurrency prices.</b>
+                                    </p>
+                                </div>
+
+                                <div id="infoOfProject">
+                                    <p>
+                                        A cryptocurrency (or crypto currency) is a digital asset designed to work as a
+                                        medium of exchange that uses strong cryptography to secure financial
+                                        transactions,
+                                        control the creation of additional units, and verify the transfer of assets.
+                                        Cryptocurrencies use decentralized control as opposed to centralized digital
+                                        currency and central banking systems. The decentralized control of each
+                                        cryptocurrency works through distributed ledger technology, typically a
+                                        blockchain,
+                                        that serves as a public financial transaction database. Bitcoin, first released
+                                        as
+                                        open-source software in 2009, is generally considered the first decentralized
+                                        cryptocurrency. Since the release of bitcoin, over 4,000 altcoins (alternative
+                                        variants of bitcoin, or other cryptocurrencies) have been created.
+                                    </p>
+                                </div>
+                                <div class="riskWarning">
+                                    <p>RISK WARNING: Trading and investing in cryptocurrencies
+                                        involves
+                                        substantial risk of loss and is not suitable for all types of investors. Please
+                                        make sure
+                                        you are investing mindfully after understanding the nature, complexity and risks
+                                        inherent in
+                                        the trading of cryptocurrency. You should not purchase cryptocurrency unless you
+                                        understand
+                                        the extent of your exposure to potential loss. Cryptocurrencies price can be
+                                        affected by
+                                        many factors, including, but not limited to, national and international
+                                        economic, financial,
+                                        regulatory, political, terrorist, military, and other events. Extreme changes in
+                                        price may
+                                        occur at any time, resulting in a potential loss of value of your entire
+                                        investment in
+                                        cryptocurrencies, complete or partial loss of purchasing power, and difficulty
+                                        or a complete
+                                        inability to sell or exchange your currency. Please make sure you are not
+                                        risking funds you
+                                        can not afford to lose.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p class="copyrights">Copyright &copy; 2019 by Edgar Bagdasarov </p>
+        </footer>
+
+    </div>
+
+    <!-- Hidden Div of card template -->
+    <div class="cardTemplate col-md-12 col-xs-12 col-lg-6" style="width: 18rem; visibility: hidden; display: none">
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.js"></script>
+    <script src="main.js"></script>
+
+</body>
+
+
+</html>
