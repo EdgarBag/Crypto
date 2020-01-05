@@ -101,6 +101,7 @@ function getMoreInfo(cardId) {
     var localStorageIsEmptyORDeffirenceIsMoreThanTwoMinutes = (cardFromLocal === null) || (dt - cardFromLocal.timestamp) > (1000 * 60 * 2);
 
     if (localStorageIsEmptyORDeffirenceIsMoreThanTwoMinutes) {
+        console.log(cardId);
         $("#loading").css("display", "block");
         exchengeItemRequest("https://api.coingecko.com/api/v3/coins/" + cardId)
             .then(moreInfo => onMoreInfoRequestSuccess(moreInfo))
@@ -113,10 +114,12 @@ function getMoreInfo(cardId) {
 
 // function to show more info in case when local storage is empty or last updated time is more than 2 minutes
 function onMoreInfoRequestSuccess(json) {
+    console.log(json)
     const id = json.id;
-    const childId = id + "_c";
+    const childId = id;
     var parentDiv = $(`.${json.id}`);
-    var childDiv = document.querySelector("#" + childId);
+    let childDiv = document.getElementById("#" + childId);
+    // console.log(childDiv);
 
     $("#loading").css("display", "none");
     if (childDiv != null) {
@@ -261,8 +264,8 @@ var textWrapper = document.querySelector('.ml14 .letters');
 textWrapper.innerHTML = textWrapper.textContent.replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>");
 
 anime.timeline({
-    loop: true
-})
+        loop: true
+    })
     .add({
         targets: '.ml14 .line',
         scaleX: [0, 1],
